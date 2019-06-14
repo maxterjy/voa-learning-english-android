@@ -1,0 +1,1148 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+<script src="//tags.tiqcdn.com/utag/bbg/voa-pangea/prod/utag.sync.js"></script> <script type='text/javascript' src='https://www.youtube.com/iframe_api'></script>
+<script type="text/javascript">
+//a general 'js' detection, must be on top level in <head>, due to CSS performance
+document.documentElement.className = "js";
+var cacheBuster = "117";
+var appBaseUrl = "/";
+var imgEnhancerBreakpoints = [0, 144, 256, 408, 650, 1023, 1597];
+var isLoggingEnabled = false;
+var pwaEnabled;
+</script>
+<script type="text/javascript">
+// register service worker if supported
+// Serviceworker file needs to exist in root folder, because it defines its scope = it can itercept only requests below it in the tree structure
+window.addEventListener('load', function () {
+if ('serviceWorker' in navigator && (pwaEnabled || typeof OneSignal != 'undefined')) {
+var sw = '/OneSignalSDKWorker.js';
+if (typeof OneSignal != 'undefined') {
+sw = sw + '?appId='+OneSignal.config.appId;
+}
+if (pwaEnabled) {
+sw = sw.indexOf('?') > -1 ? sw + ',pwa=true' : sw + '?pwa=true';
+}
+navigator.serviceWorker.register(sw).then(function (registration) {
+console.log('ServiceWorker registration successful with scope: ', registration.scope);
+}, function (err) {
+console.log('ServiceWorker registration failed: ', err);
+});
+}
+});
+</script>
+<meta charset="utf-8" />
+<title>Podcast</title>
+<meta name="title" content="Podcast" />
+<meta name="description" content="VOA Learning English presents news, features, audio, video and multimedia about the U.S. and the world in American English. Stories are written at the intermediate and upper-beginner level. Words are spoken one-third slower for ESL learners." />
+<meta name="keywords" content="voa, voice of america, voa learning english, voa learningenglish, voa special english, learningenglish.voanews.com, voa hoc tieng anh" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta property="fb:pages" content="103481483020802" />
+<meta name="msvalidate.01" content="3286EE554B6F672A6F2E608C02343C0E" />
+<meta name="apple-mobile-web-app-title" content="VOA" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="apple-itunes-app" content="app-id=632618796" />
+<link href="/Content/responsive/VOA/en-US-LEARN/VOA-en-US-LEARN.css?&amp;av=7.32.0.0&amp;cb=117" rel="stylesheet"/>
+<script src="/Scripts/responsive/infographics.b?v=HJdvKzzr83Zig6Z_kvpz_S_k_jghQSfpmGkIFpPWqko1?&amp;av=7.32.0.0&amp;cb=117"></script>
+<script src="/Scripts/responsive/loader.b?v=ikvvZzFaGjZXlZ2Oq-NbHnrZPDPG9TJyujdM2YTzhQQ1&amp;av=7.32.0.0&amp;cb=117"></script>
+<link rel="shortcut icon" href="/Content/responsive/VOA/img/webApp/favicon.ico" />
+<link rel="apple-touch-icon" sizes="152x152" href="/Content/responsive/VOA/img/webApp/ico-152x152.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/Content/responsive/VOA/img/webApp/ico-144x144.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/Content/responsive/VOA/img/webApp/ico-114x114.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/Content/responsive/VOA/img/webApp/ico-72x72.png" />
+<link rel="apple-touch-icon-precomposed" href="/Content/responsive/VOA/img/webApp/ico-57x57.png" />
+<link rel="icon" sizes="192x192" href="/Content/responsive/VOA/img/webApp/ico-192x192.png" />
+<link rel="icon" sizes="128x128" href="/Content/responsive/VOA/img/webApp/ico-128x128.png" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="msapplication-TileImage" content="/Content/responsive/VOA/img/webApp/ico-144x144.png" />
+<link rel="alternate" type="application/rss+xml" title="VOA - Top Stories [RSS]" href="/api/" />
+<link rel="sitemap" type="application/rss+xml" href="/sitemap.xml" />
+</head>
+<body class="nav-no-loaded pg-rss-podcast ">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8MP7P" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> <script type="text/javascript">
+if (top.location === self.location) { //if not inside of an IFrame
+var renderGtm = "true";
+if (renderGtm === "true") {
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N8MP7P');
+}
+}
+</script>
+<!--Analytics tag js version start-->
+<script type="text/javascript">
+var utag_data={entity:"VOA",language:"English",language_service:"VOA Learning English",short_language_service:"LEARN",property_id:"473",platform:"Responsive",platform_short:"R",runs_js:"Yes",page_title:"Podcast",page_type:"podcast",page_name:"Podcast",content_type:"index",subcontent_type:"podcast",enviro_type:"prod",url:"",domain:"learningenglish.voanews.com",slug:"",section:"podcast"};
+if(typeof(TealiumTagFrom)==='function' && typeof(TealiumTagSearchKeyword)==='function') {
+var utag_from=TealiumTagFrom();var utag_searchKeyword=TealiumTagSearchKeyword();
+if(utag_searchKeyword!=null && utag_searchKeyword!=='' && utag_data["search_keyword"]==null) utag_data["search_keyword"]=utag_searchKeyword;if(utag_from!=null && utag_from!=='') utag_data["from"]=TealiumTagFrom();}
+(function(a,b,c,d){ a="https://tags.tiqcdn.com/utag/bbg/voa-pangea/prod/utag.js"; b=document;c="script";d=b.createElement(c);d.src=a;d.type="text/java"+c;d.async=true; a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a); })();
+</script>
+<!--Analytics tag js version end-->
+<!-- Analytics tag management NoScript -->
+<noscript>
+<img style="position: absolute" src="https://bbg.d1.sc.omtrdc.net/b/ss/bbgrvoalearnen-bbgprod-bbgentityvoa-bbgunitvoalearningenglish/1/G.4--NS/385130575?pageName=voa%3alearn%3ar%3apodcast%3apodcast&amp;c6=podcast&amp;v6=D=c6&amp;g=https%3a%2f%2flearningenglish.voanews.com&amp;c1=D=g&amp;v1=D=g&amp;events=event1&amp;c16=voa%20learning%20english&amp;v16=D=c16&amp;ch=english&amp;v15=D=ch&amp;c15=D=ch&amp;c4=index&amp;v4=D=c4&amp;c20=no&amp;c17=responsive&amp;v17=D=c17" border="0" width="1" height="1" /></noscript>
+<!-- End of Analytics tag management NoScript -->
+<!--*** Accessibility links - For ScreenReaders only ***-->
+<section>
+<div class="sr-only">
+<h2>Accessibility links</h2>
+<ul>
+<li><a href="#content" data-disable-smooth-scroll="1">Skip to main content</a></li>
+<li><a href="#navigation" data-disable-smooth-scroll="1">Skip to main Navigation</a></li>
+<li><a href="#txtHeaderSearch" data-disable-smooth-scroll="1">Skip to Search</a></li>
+</ul>
+</div>
+</section>
+<div dir="ltr">
+<div id="page">
+<div class="hdr">
+<div class="hdr-nav-frag">
+<div class="container">
+<a href="/" class="fl" id="logo">
+<img src="/Content/responsive/VOA/en-US-LEARN/img/logo.png" alt="logo" />
+</a>
+<img src="/Content/responsive/VOA/en-US-LEARN/img/logo-print_color.png" class="logo-print logo-print--color" alt="logo-print">
+<ul class="compact-actions">
+<li class="action action-entity-sites">
+<a href="/navigation/allsites">
+<span class="ico ico-languages"></span>
+</a>
+</li>
+<li class="action action-srch">
+<a href="/s">
+<span class="ico ico-search"></span>
+<span class="arrow-open"></span>
+</a>
+</li>
+<li class="action action-menu">
+<a href="/navigation.html" class="link-js">
+<span class="ico ico-menu"></span>
+<span class="arrow-open"></span>
+</a>
+</li>
+</ul>
+<div class="actions">
+<div class="actions__safe-wrap">
+<div class="action action-entity-sites">
+<a href="/navigation/allsites" class="action__link" data-smoothscroll="disabled">
+<span class="ico ico-languages"></span> <span class="action__txt action__txt--entity-sites">Languages</span>
+<span class="arrow-open"></span>
+</a>
+</div>
+<div class="action action-socials socials">
+<ul class="follow">
+<li>
+<a href="https://www.facebook.com/voalearningenglish" title="Follow us on Facebook" class="btn btn--rounded btn-facebook" target="_blank">
+<span class="ico ico-facebook ico--nobg"></span>
+</a>
+</li>
+<li>
+<a href="https://twitter.com/VOALearnEnglish" title="https://twitter.com/VOALearnEnglish" class="btn btn--rounded btn-twitter" target="_blank">
+<span class="ico ico-twitter ico--nobg"></span>
+</a>
+</li>
+<li>
+<a href="https://www.youtube.com/voalearningenglish" title="http://www.youtube.com/user/voalearningenglish" class="btn btn--rounded btn-youtube" target="_blank">
+<span class="ico ico-youtube ico--nobg"></span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="action pnl-srch-top collapsed">
+<form action="/s" id="form-headerSearch" method="get" role="search"><ul class="form__list">
+<span class="srch-elem">
+<span class="input-wrap">
+<li class="form__group m-tb-0">
+<label for="txtHeaderSearch" class="form__label sr-only">Search</label>
+<input type="text" id="txtHeaderSearch" name="k" placeholder="search text ..." accesskey="s" value="" class="form__input analyticstag-event" onkeydown="if (event.keyCode === 13) { FireAnalyticsTagEventOnSearch('search', $dom.get('txtHeaderSearch')[0].value) }" />
+</li>
+</span>
+<button title="Search" type="submit" class="btn btn-srch analyticstag-event" onclick="FireAnalyticsTagEventOnSearch('search', $dom.get('txtHeaderSearch')[0].value) ">
+<span class="ico ico-search"></span>
+<span class="text">Search</span>
+</button>
+</span>
+</ul></form>
+</div>
+</div>
+</div>
+</div>
+<div class="sticky-nav-wrap container">
+<div class="sticked-nav-actions">
+<a href="#" title="search" class="btn btn--rounded btn-open-srch">
+<span class="ico ico-search"></span>
+</a>
+</div>
+</div>
+<div class="nav-hdr-outer-container">
+<div class="container" id="nav-hdr-container">
+<div class="navigation collapsed" id="navigation">
+<div class="media">
+<ul class="items">
+<li class="collapsible item collapsed has-box" id="menu-item-listen">
+<a class="handler" href="/Navigation/LiveAudioNJS" title="Audio menu" tabindex="0">
+<span class="ico ico-audio-rounded"></span>
+<span class="text">Audio menu</span>
+<span class="live"></span>
+<span class="ico ico-chevron-up"></span><span class="ico ico-chevron-down"></span><span class="ico ico-plus"></span><span class="ico ico-minus"></span>
+</a>
+<div class="inner">
+</div>
+</li>
+</ul>
+</div>
+<div class="menu">
+<ul class="items">
+<li class=" item">
+<a class="handler" href="/p/5373.html">About Learning English</a> </li>
+<li class=" item">
+<a class="handler" href="/p/5609.html">Beginning Level</a> </li>
+<li class=" item">
+<a class="handler" href="/p/5610.html">Intermediate Level</a> </li>
+<li class=" item">
+<a class="handler" href="/p/5611.html">Advanced Level</a> </li>
+<li class=" item">
+<a class="handler" href="https://learningenglish.voanews.com/p/6353.html">US History</a> </li>
+<li class=" last-menu-item item">
+<a class="handler" href="http://m.learningenglish.voanews.com/p/5631.html">Video</a> </li>
+<li class="service item collapsible collapsed show-more">
+<span class="handler" id="service-handler">
+<span class="more">More</span><span class="ico ico-menu"></span>
+</span>
+<div class="inner">
+<ul class="stored-items subitems"></ul>
+<ul class="options subitems">
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="menu-box media-nav" id="menu-item-listen-box">
+<div class="container">
+<ul class="items">
+<li class="item" id="tube-122">
+<div class="inner">
+<ul>
+<li class="media-block-wrap hlight">
+<a class="tube-name" href="/Navigation/LiveAudio/#tube-122">VOA Learning English</a>
+<h3 class="section-head">Latest program</h3>
+<div>
+<ul>
+<li>
+<div class="media-block horizontal has-img size-3">
+<a href="/a/4939595.html" class="img-wrap" title="Learning English Broadcast">
+<div class="thumb thumb16_9">
+<img data-src="https://gdb.voanews.com/47E37481-CAD6-4AEF-9AD4-74FC8B936E46_w66_r1.jpg" src="" alt=" ">
+</div>
+<span class="ico ico-audio ico--media-type"></span>
+</a>
+<div class="content">
+<a href="/a/4939595.html" >
+<h4 class="media-block__title">
+<span class="title">Learning English Broadcast</span>
+</h4>
+</a>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li class="media-block-wrap upcoming indent-time">
+<h3 class="section-head">Upcoming</h3>
+<div class="">
+<ul class="">
+<li>
+<div class="media-block horizontal with-date date--time size-4">
+<div class="content">
+<span class="date date--time" >00:30 - 01:00</span>
+<h4 class="media-block__title">
+<span class="ico ico-audio"></span>
+<span class="title">Learning English Broadcast</span>
+</h4>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li class="media-block-wrap custom-links">
+<h3 class="section-head">More radio</h3>
+<ul class="subitems">
+<li class="subitem">
+<a class="handler" href="http://m.learningenglish.voanews.com/programindex.html">Program Index</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-trigger="btn-open-srch" class="sticked-nav-popup popup-srch">
+<div class="container">
+<div class="stick-srch-form">
+<form action="/s" id="form-stickyNavSearch" method="get" role="search"><ul class="form__list">
+<span class="srch-elem">
+<span class="input-wrap">
+<li class="form__group m-tb-0">
+<label for="txtStickyNavSearch" class="form__label sr-only">Search</label>
+<input type="text" id="txtStickyNavSearch" name="k" placeholder="search text ..." accesskey="s" value="" class="form__input analyticstag-event" onkeydown="if (event.keyCode === 13) { FireAnalyticsTagEventOnSearch('search', $dom.get('txtStickyNavSearch')[0].value) }" />
+</li>
+</span>
+<button title="Search" type="submit" class="btn btn-srch analyticstag-event" onclick="FireAnalyticsTagEventOnSearch('search', $dom.get('txtStickyNavSearch')[0].value) ">
+<span class="ico ico-search"></span>
+<span class="text">Search</span>
+</button>
+</span>
+</ul></form>
+<button class="btn btn-close"><span class="ico ico-close"></span></button>
+</div>
+</div>
+</div>
+<div data-trigger="btn-open-sharing-more" class="sticked-nav-popup popup-share">
+<div class="container">
+<button class="btn btn-close"><span class="ico ico-close"></span></button>
+</div>
+</div>
+</div>
+<div class="c-hlights c-hlights--breaking c-hlights--no-item js-hidden" data-hlight-display="mobile,desktop">
+<div class="c-hlights__wrap container p-0">
+<div class="c-hlights__nav">
+<a role="button" href="#" title="Previous">
+<span class="ico ico-chevron-backward m-0"></span>
+<span class="sr-only">Previous</span>
+</a>
+<a role="button" href="#" title="Next">
+<span class="ico ico-chevron-forward m-0"></span>
+<span class="sr-only">Next</span>
+</a>
+</div>
+<input class="switcher-controller" id="more-less-1" type="checkbox">
+<span class="c-hlights__label">
+<span class="">Breaking News</span>
+<div class="switcher-trigger">
+<label for="more-less-1" class="switcher-trigger__label switcher-trigger__label--more p-b-0" title="Show more">
+<span class="ico ico-chevron-down"></span>
+</label>
+<label for="more-less-1" class="switcher-trigger__label switcher-trigger__label--less p-b-0" title="Show less">
+<span class="ico ico-chevron-up"></span>
+</label>
+</div>
+</span>
+<ul class="c-hlights__items switcher-target">
+</ul>
+</div>
+</div>
+<div class="c-hlights c-hlights--live hidden-sm hidden-md hidden-lg c-hlights--no-item js-hidden" data-hlight-display="mobile">
+<div class="c-hlights__wrap container p-0">
+<div class="c-hlights__nav">
+<a role="button" href="#" title="Previous">
+<span class="ico ico-chevron-backward m-0"></span>
+<span class="sr-only">Previous</span>
+</a>
+<a role="button" href="#" title="Next">
+<span class="ico ico-chevron-forward m-0"></span>
+<span class="sr-only">Next</span>
+</a>
+</div>
+<input class="switcher-controller" id="more-less-2" type="checkbox">
+<span class="c-hlights__label">
+<span class="badge badge--live">Live</span>
+<div class="switcher-trigger">
+<label for="more-less-2" class="switcher-trigger__label switcher-trigger__label--more p-b-0" title="Show more">
+<span class="ico ico-chevron-down"></span>
+</label>
+<label for="more-less-2" class="switcher-trigger__label switcher-trigger__label--less p-b-0" title="Show less">
+<span class="ico ico-chevron-up"></span>
+</label>
+</div>
+</span>
+<ul class="c-hlights__items switcher-target">
+</ul>
+</div>
+</div> <div id="content">
+<div class="container">
+<h1 class="pg-title">RSS / Podcast</h1>
+</div>
+<div class="content-body">
+<div class="container">
+<div class="row">
+<div class="col-xs-12 col-md-8 col-lg-8 pull-left">
+<div class="content-offset">
+<div class="nav-tabs nav-tabs--level-1 nav-tabs--default">
+<div class="container">
+<div class="row">
+<div class="nav-tabs__inner swipe-slide">
+<ul class="nav-tabs__list swipe-slide__inner">
+<li class="nav-tabs__item nav-tabs__item--default">
+<a href="/rssfeeds">RSS</a>
+</li>
+<li class="nav-tabs__item nav-tabs__item--default nav-tabs__item--active">
+<a href="/podcasts">PODCAST</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-content" id="rssItems">
+<div class="tab-pane">
+<p class="desc">
+Subscribe to our VOA Learning English podcasts. Audio will be delivered to you automatically. Listen on your computer, or load them on your listening device and take them with you.
+</p>
+<div class="media-block-wrap">
+<ul class="row">
+<li class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+<div class="media-block has-img size-2">
+<a href="/z/3521" class="img-wrap" title="As It Is">
+<div class="thumb thumb16_9">
+<img data-src="https://gdb.voanews.com/6AD44B97-4251-4D10-B871-C134BBFB39FA_w100_r1.jpg" src="" alt=" ">
+</div>
+</a>
+<div class="content">
+<a href="/z/3521" >
+<h4 class="media-block__title">
+<span class="title">As It Is</span>
+</h4>
+<p class="perex">As It Is takes a daily look at issues in the news in the United States and around the world.</p>
+</a>
+<a class="link-service" href="/podcast/?count=20&amp;zoneId=3521">
+<span class="ico ico-podcast"></span>
+Subscribe
+</a>
+<a class="link-service" href="https://itunes.apple.com/us/podcast/id657114738">
+<span class="ico ico-itunes"></span>
+iTunes
+</a>
+</div>
+</div>
+</li>
+<li class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+<div class="media-block has-img size-2">
+<a href="/z/986" class="img-wrap" title="Arts &amp; Culture">
+<div class="thumb thumb16_9">
+<img data-src="https://gdb.voanews.com/05E3880E-D538-4DF1-A825-39817FBBFA2B_w100_r1.jpg" src="" alt=" ">
+</div>
+</a>
+<div class="content">
+<a href="/z/986" >
+<h4 class="media-block__title">
+<span class="title">Arts &amp; Culture</span>
+</h4>
+<p class="perex">Arts &amp; Culture is our weekly program about music, pop culture, society and life.</p>
+</a>
+<a class="link-service" href="/podcast/?count=20&amp;zoneId=986">
+<span class="ico ico-podcast"></span>
+Subscribe
+</a>
+<a class="link-service" href="https://itunes.apple.com/podcast/id527231444">
+<span class="ico ico-itunes"></span>
+iTunes
+</a>
+</div>
+</div>
+</li>
+<li class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+<div class="media-block has-img size-2">
+<a href="/z/1581" class="img-wrap" title="American Stories">
+<div class="thumb thumb16_9">
+<img data-src="https://gdb.voanews.com/A8EF3F7B-BE7B-4D3A-BE57-EC62C28F8703_w100_r1.jpg" src="" alt=" ">
+</div>
+</a>
+<div class="content">
+<a href="/z/1581" >
+<h4 class="media-block__title">
+<span class="title">American Stories</span>
+</h4>
+<p class="perex">Classic short stories that introduce American literature to intermediate English learners.</p>
+</a>
+<a class="link-service" href="/podcast/?count=20&amp;zoneId=1581">
+<span class="ico ico-podcast"></span>
+Subscribe
+</a>
+</div>
+</div>
+</li>
+<li class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+<div class="media-block has-img size-2">
+<a href="/z/5535" class="img-wrap" title="Ask a Teacher">
+<div class="thumb thumb16_9">
+<img data-src="https://gdb.voanews.com/4B76EEE5-270B-4BC9-9210-9A6AB476EB46_w100_r1.jpg" src="" alt=" ">
+</div>
+</a>
+<div class="content">
+<a href="/z/5535" >
+<h4 class="media-block__title">
+<span class="title">Ask a Teacher</span>
+</h4>
+<p class="perex">Do you have a question about English? Go ahead and Ask a Teacher.</p>
+</a>
+<a class="link-service" href="/podcast/?count=20&amp;zoneId=5535">
+<span class="ico ico-podcast"></span>
+Subscribe
+</a>
+</div>
+</div>
+</li>
+<li class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+<div class="media-block has-img size-2">
+<a href="/z/4456" class="img-wrap" title="Everyday Grammar">
+<div class="thumb thumb16_9">
+<img data-src="https://gdb.voanews.com/F5CFBB86-9C63-419F-A962-EB9377F68612_w100_r1.jpg" src="" alt=" ">
+</div>
+</a>
+<div class="content">
+<a href="/z/4456" >
+<h4 class="media-block__title">
+<span class="title">Everyday Grammar</span>
+</h4>
+<p class="perex">How Americans use English grammar in everyday conversation.</p>
+</a>
+<a class="link-service" href="/podcast/?count=20&amp;zoneId=4456">
+<span class="ico ico-podcast"></span>
+Subscribe
+</a>
+</div>
+</div>
+</li>
+<li class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+<div class="media-block has-img size-2">
+<a href="/z/959" class="img-wrap" title="Education">
+<div class="thumb thumb16_9">
+<img data-src="https://gdb.voanews.com/8975697B-D95E-40CF-9EC6-273FAED70AA5_w100_r1.jpg" src="" alt=" ">
+</div>
+</a>
+<div class="content">
+<a href="/z/959" >
+<h4 class="media-block__title">
+<span class="title">Education</span>
+</h4>
+<p class="perex">Innovations and trends in education in the United States and around the world.</p>
+</a>
+<a class="link-service" href="/podcast/?count=20&amp;zoneId=959">
+<span class="ico ico-podcast"></span>
+Subscribe
+</a>
+</div>
+</div>
+</li>
+<li class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+<div class="media-block has-img size-2">
+<a href="/z/955" class="img-wrap" title="Health &amp; Lifestyle">
+<div class="thumb thumb16_9">
+<img data-src="https://gdb.voanews.com/DF5465F8-7DF2-4AE4-9C05-E62A5DEAC9EE_w100_r1.jpg" src="" alt=" ">
+</div>
+</a>
+<div class="content">
+<a href="/z/955" >
+<h4 class="media-block__title">
+<span class="title">Health &amp; Lifestyle</span>
+</h4>
+<p class="perex">Learn English as you read and listen to news and feature stories about health, medical and lifestyle topics. </p>
+</a>
+<a class="link-service" href="/podcast/?count=20&amp;zoneId=955">
+<span class="ico ico-podcast"></span>
+Subscribe
+</a>
+</div>
+</div>
+</li>
+<li class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+<div class="media-block has-img size-2">
+<a href="/z/979" class="img-wrap" title="U.S. History">
+<div class="thumb thumb16_9">
+<img data-src="https://gdb.voanews.com/296ECABE-72BA-48FF-B246-6AD6A2EC8727_w100_r1.jpg" src="" alt=" ">
+</div>
+</a>
+<div class="content">
+<a href="/z/979" >
+<h4 class="media-block__title">
+<span class="title">U.S. History</span>
+</h4>
+<p class="perex">U.S. History explains the history of the United States. Each report tells how the country and its people have developed.</p>
+</a>
+<a class="link-service" href="/podcast/?count=20&amp;zoneId=979">
+<span class="ico ico-podcast"></span>
+Subscribe
+</a>
+<a class="link-service" href="https://itunes.apple.com/podcast/id527237885">
+<span class="ico ico-itunes"></span>
+iTunes
+</a>
+</div>
+</div>
+</li>
+<li class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+<div class="media-block has-img size-2">
+<a href="/z/1579" class="img-wrap" title="Science &amp; Technology">
+<div class="thumb thumb16_9">
+<img data-src="https://gdb.voanews.com/BE96DAD2-F54B-4A94-95FA-CBD20D55B2CD_w100_r1.jpg" src="" alt=" ">
+</div>
+</a>
+<div class="content">
+<a href="/z/1579" >
+<h4 class="media-block__title">
+<span class="title">Science &amp; Technology</span>
+</h4>
+<p class="perex">New developments in science, space exploration, environment and technology</p>
+</a>
+<a class="link-service" href="/podcast/?count=20&amp;zoneId=1579">
+<span class="ico ico-podcast"></span>
+Subscribe
+</a>
+<a class="link-service" href="https://itunes.apple.com/podcast/id527234700">
+<span class="ico ico-itunes"></span>
+iTunes
+</a>
+</div>
+</div>
+</li>
+<li class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+<div class="media-block has-img size-2">
+<a href="/z/4652" class="img-wrap" title="What&#39;s Trending Today?">
+<div class="thumb thumb16_9">
+<img data-src="https://gdb.voanews.com/101EE4FD-9D82-4647-BFDB-F49B2F8C100F_w100_r1.jpg" src="" alt=" ">
+</div>
+</a>
+<div class="content">
+<a href="/z/4652" >
+<h4 class="media-block__title">
+<span class="title">What&#39;s Trending Today?</span>
+</h4>
+<p class="perex">The day&#39;s hottest issue in social media.</p>
+</a>
+<a class="link-service" href="/podcast/?count=20&amp;zoneId=4652">
+<span class="ico ico-podcast"></span>
+Subscribe
+</a>
+<a class="link-service" href="https://itunes.apple.com/us/podcast/id1126941332">
+<span class="ico ico-itunes"></span>
+iTunes
+</a>
+</div>
+</div>
+</li>
+<li class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+<div class="media-block has-img size-2">
+<a href="/z/987" class="img-wrap" title="Words and Their Stories">
+<div class="thumb thumb16_9">
+<img data-src="https://gdb.voanews.com/BBDF53C7-85D6-41BE-8BA2-2D7A939CD544_w100_r1.jpg" src="" alt=" ">
+</div>
+</a>
+<div class="content">
+<a href="/z/987" >
+<h4 class="media-block__title">
+<span class="title">Words and Their Stories</span>
+</h4>
+<p class="perex">Words and Their Stories programs explain idioms and expressions that many learners of American English find difficult to understand.</p>
+</a>
+<a class="link-service" href="/podcast/?count=20&amp;zoneId=987">
+<span class="ico ico-podcast"></span>
+Subscribe
+</a>
+<a class="link-service" href="https://itunes.apple.com/podcast/id527237888">
+<span class="ico ico-itunes"></span>
+iTunes
+</a>
+</div>
+</div>
+</li>
+<li class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+<div class="media-block has-img size-2">
+<a href="/z/4716" class="img-wrap" title="Everyday Grammar TV">
+<div class="thumb thumb16_9">
+<img data-src="https://gdb.voanews.com/F5C0A165-0C08-4E16-B530-1C20A96519FB_w100_r1.jpg" src="" alt=" ">
+</div>
+</a>
+<div class="content">
+<a href="/z/4716" >
+<h4 class="media-block__title">
+<span class="title">Everyday Grammar TV</span>
+</h4>
+<p class="perex">Everyday Grammar TV is a video series to teach grammar for learners of American English.</p>
+</a>
+<a class="link-service" href="/podcast/video.aspx?count=20&amp;zoneId=4716">
+<span class="ico ico-podcast"></span>
+Video Podcast
+</a>
+<a class="link-service" href="https://itunes.apple.com/us/podcast/id1079101818">
+<span class="ico ico-itunes"></span>
+iTunes
+</a>
+</div>
+</div>
+</li>
+<li class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+<div class="media-block has-img size-2">
+<a href="/z/4691" class="img-wrap" title="English @ the Movies">
+<div class="thumb thumb16_9">
+<img data-src="https://gdb.voanews.com/BD1788BA-E5CA-4958-86CA-1D1E07C2CF74_w100_r1.jpg" src="" alt=" ">
+</div>
+</a>
+<div class="content">
+<a href="/z/4691" >
+<h4 class="media-block__title">
+<span class="title">English @ the Movies</span>
+</h4>
+<p class="perex">English @ the Movies is a short video explaining a term heard in a current movie.</p>
+</a>
+<a class="link-service" href="/podcast/video.aspx?count=20&amp;zoneId=4691">
+<span class="ico ico-podcast"></span>
+Video Podcast
+</a>
+<a class="link-service" href="https://itunes.apple.com/us/podcast/id1079101363">
+<span class="ico ico-itunes"></span>
+iTunes
+</a>
+</div>
+</div>
+</li>
+<li class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+<div class="media-block has-img size-2">
+<a href="/z/3619" class="img-wrap" title="English In A Minute">
+<div class="thumb thumb16_9">
+<img data-src="https://gdb.voanews.com/9DFF77C9-D804-40CC-BA01-CF89BC0F19E4_w100_r1.jpg" src="" alt=" ">
+</div>
+</a>
+<div class="content">
+<a href="/z/3619" >
+<h4 class="media-block__title">
+<span class="title">English In A Minute</span>
+</h4>
+<p class="perex">A short video explaining an expression used in American English</p>
+</a>
+<a class="link-service" href="/podcast/video.aspx?count=20&amp;zoneId=3619">
+<span class="ico ico-podcast"></span>
+Video Podcast
+</a>
+<a class="link-service" href="https://itunes.apple.com/us/podcast/id1122753483">
+<span class="ico ico-itunes"></span>
+iTunes
+</a>
+</div>
+</div>
+</li>
+<li class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+<div class="media-block has-img size-2">
+<a href="/z/3620" class="img-wrap" title="News Words">
+<div class="thumb thumb16_9">
+<img data-src="https://gdb.voanews.com/AA4736B8-C81C-4B7B-B7BC-D0DF25A12324_w100_r1.jpg" src="" alt=" ">
+</div>
+</a>
+<div class="content">
+<a href="/z/3620" >
+<h4 class="media-block__title">
+<span class="title">News Words</span>
+</h4>
+<p class="perex">A short video explaining a word or term used in news stories</p>
+</a>
+<a class="link-service" href="/podcast/video.aspx?count=20&amp;zoneId=3620">
+<span class="ico ico-podcast"></span>
+Video Podcast
+</a>
+</div>
+</div>
+</li>
+<li class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+<div class="media-block has-img size-2">
+<a href="/z/4791" class="img-wrap" title="America&#39;s National Parks">
+<div class="thumb thumb16_9">
+<img data-src="https://gdb.voanews.com/9B0FC82D-0822-4EDA-8B06-96640E49EB68_w100_r1.jpg" src="" alt=" ">
+</div>
+</a>
+<div class="content">
+<a href="/z/4791" >
+<h4 class="media-block__title">
+<span class="title">America&#39;s National Parks</span>
+</h4>
+<p class="perex">This year, the U.S. National Park Service turns 100. America’s 28th President, Woodrow Wilson, formed the National Park Service in 1916 to “protect the wild and wonderful landscapes” in the United States.
+</p>
+</a>
+<a class="link-service" href="/podcast/?count=20&amp;zoneId=4791">
+<span class="ico ico-podcast"></span>
+Subscribe
+</a>
+</div>
+</div>
+</li>
+<li class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+<div class="media-block has-img size-2">
+<a href="/z/5254" class="img-wrap" title="What It Takes">
+<div class="thumb thumb16_9">
+<img data-src="https://gdb.voanews.com/88FBF8AB-020C-442E-A511-EC29DEBDF431_w100_r1.jpg" src="" alt=" ">
+</div>
+</a>
+<div class="content">
+<a href="/z/5254" >
+<h4 class="media-block__title">
+<span class="title">What It Takes</span>
+</h4>
+<p class="perex">What It Takes is a podcast of conversations with well-known people in almost every field. The interviews have been recorded over the past 25 years by the American Academy of Achievement. They offer life stories of people who have had a huge impact on the world. </p>
+</a>
+<a class="link-service" href="/podcast/?count=20&amp;zoneId=5254">
+<span class="ico ico-podcast"></span>
+Subscribe
+</a>
+</div>
+</div>
+</li>
+<li class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+<div class="media-block has-img size-2">
+<a href="/z/1689" class="img-wrap" title="Learning English Broadcast">
+<div class="thumb thumb16_9">
+<img data-src="https://gdb.voanews.com/47E37481-CAD6-4AEF-9AD4-74FC8B936E46_w100_r1.jpg" src="" alt=" ">
+</div>
+</a>
+<div class="content">
+<a href="/z/1689" >
+<h4 class="media-block__title">
+<span class="title">Learning English Broadcast</span>
+</h4>
+<p class="perex">
+Learning English programs use a limited vocabulary and short sentences. They are read at a slower pace than VOA&#39;s other English broadcasts. Our broadcasts were formerly known as Special English.</p>
+</a>
+<a class="link-service" href="/podcast/?count=20&amp;zoneId=1689">
+<span class="ico ico-podcast"></span>
+Subscribe
+</a>
+<a class="link-service" href="https://itunes.apple.com/podcast/id109522474">
+<span class="ico ico-itunes"></span>
+iTunes
+</a>
+</div>
+</div>
+</li>
+<li class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+<div class="media-block has-img size-2">
+<a href="/z/4729" class="img-wrap" title="Let&#39;s Learn English - Level 1">
+<div class="thumb thumb16_9">
+<img data-src="https://gdb.voanews.com/36F6EDDD-AEA6-4F2B-A568-984C3AB7ED33_w100_r1.jpg" src="" alt=" ">
+</div>
+</a>
+<div class="content">
+<a href="/z/4729" >
+<h4 class="media-block__title">
+<span class="title">Let&#39;s Learn English - Level 1</span>
+</h4>
+<p class="perex">Let&#39;s Learn English is a new course for English learners. Certified American English teachers designed the course for beginners. The course continues for 52 weeks. Each week, there will be a new lesson with video showing the lives of young Americans. </p>
+</a>
+<a class="link-service" href="/podcast/?count=20&amp;zoneId=4729">
+<span class="ico ico-podcast"></span>
+Subscribe
+</a>
+</div>
+</div>
+</li>
+<li class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+<div class="media-block has-img size-2">
+<a href="/z/5199" class="img-wrap" title="Let&#39;s Learn English - Level 2">
+<div class="thumb thumb16_9">
+<img data-src="https://gdb.voanews.com/FB9E669E-E453-4664-93C1-1A555C82B86D_w100_r1.jpg" src="" alt=" ">
+</div>
+</a>
+<div class="content">
+<a href="/z/5199" >
+<h4 class="media-block__title">
+<span class="title">Let&#39;s Learn English - Level 2</span>
+</h4>
+<p class="perex">Let&#39;s Learn English - Level 2 is a new course for English learners. Certified American English teachers designed the course for intermediate-level learners. Each week, there will be a new lesson with a video showing the lives of young Americans. </p>
+</a>
+<a class="link-service" href="/podcast/?count=20&amp;zoneId=5199">
+<span class="ico ico-podcast"></span>
+Subscribe
+</a>
+</div>
+</div>
+</li>
+<li class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+<div class="media-block has-img size-2">
+<a href="/z/5203" class="img-wrap" title="Let&#39;s Teach English">
+<div class="thumb thumb16_9">
+<img data-src="https://gdb.voanews.com/7F9DBAFD-2968-492C-88EE-63F705644935_w100_r1.jpg" src="" alt=" ">
+</div>
+</a>
+<div class="content">
+<a href="/z/5203" >
+<h4 class="media-block__title">
+<span class="title">Let&#39;s Teach English</span>
+</h4>
+<p class="perex">The Let’s Teach English video series offers free online training for English language educators worldwide. It is based on the Women Teaching Women English text for adult, beginning level learners. Voice of America and the University of Oregon are partners on this project. </p>
+</a>
+<a class="link-service" href="/podcast/?count=20&amp;zoneId=5203">
+<span class="ico ico-podcast"></span>
+Subscribe
+</a>
+</div>
+</div>
+</li>
+<li class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+<div class="media-block has-img size-2">
+<a href="/z/5091" class="img-wrap" title="America&#39;s Presidents">
+<div class="thumb thumb16_9">
+<img data-src="https://gdb.voanews.com/B20B9F6C-D9EE-4136-BE0D-F1429AC11148_w100_r1.jpg" src="" alt=" ">
+</div>
+</a>
+<div class="content">
+<a href="/z/5091" >
+<h4 class="media-block__title">
+<span class="title">America&#39;s Presidents</span>
+</h4>
+<p class="perex">George Washington. Abraham Lincoln. John F. Kennedy. Millard Fillmore?
+Some U.S. presidents are better known than others. “America’s Presidents” tells each of their stories: when they lived, what they were like, how they governed, and why Americans remember them. </p>
+</a>
+<a class="link-service" href="/podcast/?count=20&amp;zoneId=5091">
+<span class="ico ico-podcast"></span>
+Subscribe
+</a>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="back-to-top-nav disabled visible-xs">
+<div class="container">
+<div class="row">
+<div class="col-xs-12">
+<a title="Back to top" class="back-to-top-link" href="#page">
+<span class="ico ico-chevron-up"></span>
+<span class="text">Back to top</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<footer role="contentinfo">
+<div id="foot" class="foot">
+<div class="container">
+<div class="foot-nav collapsed" id="foot-nav">
+<div class="menu">
+<ul class="items">
+<li class="socials block-socials">
+<span class="handler" id="socials-handler">
+Follow Us
+</span>
+<div class="inner">
+<ul class="subitems follow">
+<li>
+<a href="https://www.facebook.com/voalearningenglish" title="Follow us on Facebook" class="btn btn--rounded btn-facebook" target="_blank">
+<span class="ico ico-facebook ico--rounded"></span>
+</a>
+</li>
+<li>
+<a href="https://twitter.com/VOALearnEnglish" title="https://twitter.com/VOALearnEnglish" class="btn btn--rounded btn-twitter" target="_blank">
+<span class="ico ico-twitter ico--rounded"></span>
+</a>
+</li>
+<li>
+<a href="https://www.youtube.com/voalearningenglish" title="http://www.youtube.com/user/voalearningenglish" class="btn btn--rounded btn-youtube" target="_blank">
+<span class="ico ico-youtube ico--rounded"></span>
+</a>
+</li>
+<li>
+<a href="/rssfeeds" title="RSS" class="btn btn--rounded btn-rss">
+<span class="ico ico-rss ico--rounded"></span>
+</a>
+</li>
+<li>
+<a href="/podcasts" title="Podcast" class="btn btn--rounded btn-podcast">
+<span class="ico ico-podcast ico--rounded"></span>
+</a>
+</li>
+<li>
+<a href="/subscribe.html" title="Subscribe" class="btn btn--rounded btn-email">
+<span class="ico ico-email ico--rounded"></span>
+</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="block-primary collapsed collapsible item">
+<span class="handler">
+About Learning English
+<span title="close tab" class="ico ico-chevron-up"></span><span title="open tab" class="ico ico-chevron-down"></span><span title="add" class="ico ico-plus"></span><span title="remove" class="ico ico-minus"></span>
+</span>
+<div class="inner">
+<ul class="subitems">
+<li class="subitem">
+<a class="handler" href="/p/5373.html">About Us</a>
+</li>
+<li class="subitem">
+<a class="handler" href="/p/5375.html">Contact Us</a>
+</li>
+<li class="subitem">
+<a class="handler" href="https://learningenglish.voanews.com/p/6861.html">Request Our Content</a>
+</li>
+<li class="subitem">
+<a class="handler" href="http://m.learningenglish.voanews.com/subscribe.html">Sign Up For Our Newsletter</a>
+</li>
+<li class="subitem">
+<a class="handler" href="http://m.learningenglish.voanews.com/rss.html?tab=Podcast">Subscribe to Podcast/RSS</a>
+</li>
+<li class="subitem">
+<a class="handler" href="/p/6008.html">Find Us on Satellite TV</a>
+</li>
+<li class="subitem">
+<a class="handler" href="http://docs.voanews.eu/en-US-LEARN/2014/02/15/7f8de955-596b-437c-ba40-a68ed754c348.pdf">Learning English Word Book</a>
+</li>
+<li class="subitem">
+<a class="handler" href="/p/5378.html">Our Policy About Comments</a>
+</li>
+<li class="subitem">
+<a class="handler" href="/p/6021.html">Terms of Use and Privacy Notice</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="block-primary collapsed collapsible item">
+<span class="handler">
+Video Programs
+<span title="close tab" class="ico ico-chevron-up"></span><span title="open tab" class="ico ico-chevron-down"></span><span title="add" class="ico ico-plus"></span><span title="remove" class="ico ico-minus"></span>
+</span>
+<div class="inner">
+<ul class="subitems">
+<li class="subitem">
+<a class="handler" href="/z/3619">English in a Minute</a>
+</li>
+<li class="subitem">
+<a class="handler" href="/z/4691">English @ the Movies</a>
+</li>
+<li class="subitem">
+<a class="handler" href="/z/4716">Everyday Grammar TV</a>
+</li>
+<li class="subitem">
+<a class="handler" href="/z/3613">Learning English TV</a>
+</li>
+<li class="subitem">
+<a class="handler" href="/z/3620">News Words</a>
+</li>
+<li class="subitem">
+<a class="handler" href="https://learningenglish.voanews.com/p/5644.html">Let&#39;s Learn English - Level 1</a>
+</li>
+<li class="subitem">
+<a class="handler" href="https://learningenglish.voanews.com/p/6765.html">Let&#39;s Learn English - Level 2</a>
+</li>
+<li class="subitem">
+<a class="handler" href="https://learningenglish.voanews.com/p/6764.html">Let&#39;s Teach English</a>
+</li>
+<li class="subitem">
+<a class="handler" href="https://learningenglish.voanews.com/p/6840.html">News Literacy</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="block-secondary collapsed collapsible item">
+<span class="handler">
+Audio Programs
+<span title="close tab" class="ico ico-chevron-up"></span><span title="open tab" class="ico ico-chevron-down"></span><span title="add" class="ico ico-plus"></span><span title="remove" class="ico ico-minus"></span>
+</span>
+<div class="inner">
+<ul class="subitems">
+<li class="subitem">
+<a class="handler" href="https://learningenglish.voanews.com/p/5849.html">America&#39;s National Parks</a>
+</li>
+<li class="subitem">
+<a class="handler" href="https://learningenglish.voanews.com/p/6766.html">America&#39;s Presidents</a>
+</li>
+<li class="subitem">
+<a class="handler" href="/z/1581">American Stories</a>
+</li>
+<li class="subitem">
+<a class="handler" href="/z/986">Arts &amp; Culture</a>
+</li>
+<li class="subitem">
+<a class="handler" href="/z/3521">As It Is</a>
+</li>
+<li class="subitem">
+<a class="handler" href="/z/5535">Ask a Teacher</a>
+</li>
+<li class="subitem">
+<a class="handler" href="/z/959">Education</a>
+</li>
+<li class="subitem">
+<a class="handler" href="/z/4456">Everyday Grammar</a>
+</li>
+<li class="subitem">
+<a class="handler" href="/z/955">Health &amp; Lifestyle</a>
+</li>
+<li class="subitem">
+<a class="handler" href="https://learningenglish.voanews.com/z/1689">Learning English Broadcast</a>
+</li>
+<li class="subitem">
+<a class="handler" href="/z/1579">Science &amp; Technology</a>
+</li>
+<li class="subitem">
+<a class="handler" href="https://learningenglish.voanews.com/p/6353.html">U.S. History</a>
+</li>
+<li class="subitem">
+<a class="handler" href="/z/4652">What&#39;s Trending Today</a>
+</li>
+<li class="subitem">
+<a class="handler" href="/z/5254">What It Takes</a>
+</li>
+<li class="subitem">
+<a class="handler" href="/z/987">Words &amp; Their Stories</a>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="foot__item foot__item--copyrights">
+<p class="copyright"></p>
+</div>
+</div>
+</div>
+</footer> </div>
+</div>
+<script type="text/javascript">
+//test ie 6, 7, 8
+var div = document.createElement("div");
+div.innerHTML = "<!--[if lte IE 8]><i></i><![endif]-->";
+var isIe8orLower = !!div.getElementsByTagName("i").length;
+if (!isIe8orLower && !navigator.userAgent.match(/Opera Mini/i)) {
+document.getElementsByTagName("body")[0].className += " can-ff";
+}
+// mobile browsers test
+if (typeof RFE !== 'undefined') {
+if (RFE.isMobile.any()) {
+document.getElementsByTagName("body")[0].className += " is-mobile";
+}
+else {
+document.getElementsByTagName("body")[0].className += " is-not-mobile";
+}
+}
+</script>
+<script src="/conf.js?x=117" type="text/javascript"></script>
+<div class="responsive-indicator">
+<div class="visible-xs-block">XS</div>
+<div class="visible-sm-block">SM</div>
+<div class="visible-md-block">MD</div>
+<div class="visible-lg-block">LG</div>
+</div>
+<script type="text/javascript">
+var bar_data = {
+"apiUrl": "https://voa.pangea-cms.com/publisher/en-US-LEARN/api/frontend/itemdata",
+"apiId": "0",
+"apiType": "6",
+"isEmbedded": "0",
+"cookieName": "cmsLoggedIn",
+"cookieDomain": "learningenglish.voanews.com"
+};
+</script>
+</body>
+</html>
