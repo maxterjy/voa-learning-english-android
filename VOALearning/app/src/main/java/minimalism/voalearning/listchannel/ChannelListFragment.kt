@@ -16,7 +16,10 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 
 import minimalism.voalearning.R
+import minimalism.voalearning.databinding.FragmentListChannelBinding
 import java.io.File
+import java.util.*
+import kotlin.collections.ArrayList
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,14 +39,13 @@ class ListChannelFragment : Fragment() {
 
         fetchChannelListFromPodcast()
 
-        val itemView = inflater.inflate(R.layout.fragment_list_channel, container, false)
+        val binding = FragmentListChannelBinding.inflate(inflater, container, false)
 
-        var rcChannel:RecyclerView = itemView.findViewById(R.id.rc_channel)
-        rcChannel.apply {
-            adapter = ChannelAdapter()
+        binding.rcChannel.apply {
+            adapter = ChannelAdapter(mChannelList)
         }
 
-        return itemView
+        return binding.root
     }
 
     private fun fetchChannelListFromPodcast() {
@@ -69,57 +71,54 @@ class ListChannelFragment : Fragment() {
         val markImageOpen = "<img data-src=\""
         val markImageClose = "\" src="
 
-        val markZoneOpen = "<a class=\"link-service\" href=\""
+        val markZoneOpen = "zoneId="
         val markZoneClose = "\">"
 
+        val scanner = Scanner(data)
+        var title = ""
+        var imageUrl = ""
+        var zoneId = ""
+        var lo = 0
+        var hi = 0
+        var line = ""
 
-        var lo = data.indexOf(markTitleOpen)
-        var hi = data.indexOf(markTitleClose, lo)
+        while (scanner.hasNext()) {
+            line = scanner.nextLine()
 
-        while (lo >= 0 ) {
-            //get title
-            lo += markTitleOpen.length
-
-            var title = data.substring(lo , hi)
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                title = Html.fromHtml(title, Html.FROM_HTML_MODE_LEGACY).toString()
-            }
-            else {
-                title = Html.fromHtml(title).toString()
-            }
-
-
-            //get imageURL
-            lo = data.indexOf(markImageOpen, hi)
-            lo += markImageOpen.length
-            hi = data.indexOf(markImageClose, lo)
-
-            var imageUrl = data.substring(lo, hi)
-
-            //get zoneID
-            lo = data.indexOf(markZoneOpen, hi)
-            lo += markZoneOpen.length
-            hi = data.indexOf(markZoneClose, lo)
-
-            var zoneId = data.substring(lo, hi)
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                zoneId = Html.fromHtml(zoneId, Html.FROM_HTML_MODE_LEGACY).toString()
-            }
-            else {
-                zoneId = Html.fromHtml(zoneId).toString()
+            lo = line.indexOf(markTitleOpen)
+            if (lo >= 0) {
+                hi = line.indexOf(markTitleClose)
+                title = line.substring(lo + markTitleOpen.length, hi)
             }
 
-            Log.i("thach", "item: $title")
-            Log.i("thach", "item: $imageUrl")
-            Log.i("thach", "item: $zoneId")
-            Log.i("thach", "----------------")
+            lo = line.indexOf(markImageOpen)
+            if (lo >= 0) {
+                hi = line.indexOf(markImageClose)
+                imageUrl = line.substring(lo + markImageOpen.length, hi)
+            }
 
-            mChannelList.add( ChannelInfo(title, imageUrl, zoneId))
+            lo = line.indexOf(markZoneOpen)
+            if (lo >= 0) {
+                hi = line.indexOf(markZoneClose)
+                zoneId = line.substring(lo + markZoneOpen.length, hi)
 
-            lo = data.indexOf(markTitleOpen, hi)
-            hi = data.indexOf(markTitleClose, lo)
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    title = Html.fromHtml(title, Html.FROM_HTML_MODE_LEGACY).toString()
+                    zoneId = Html.fromHtml(zoneId, Html.FROM_HTML_MODE_LEGACY).toString()
+                }
+                else {
+                    title = Html.fromHtml(title).toString()
+                    zoneId = Html.fromHtml(zoneId).toString()
+                }
+
+//                Log.i("thach", "$title")
+//                Log.i("thach", "$imageUrl")
+//                Log.i("thach", "$zoneId")
+//                Log.i("thach", "--------")
+
+                mChannelList.add( ChannelInfo(title, imageUrl, zoneId))
+            }
         }
     }
 }

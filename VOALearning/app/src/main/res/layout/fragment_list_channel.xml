@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<layout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:context=".listchannel.ListChannelFragment">
+        xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+    </data>
 
-            <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rc_channel"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".listchannel.ListChannelFragment">
 
-            </androidx.recyclerview.widget.RecyclerView>
-</FrameLayout>
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_channel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </FrameLayout>
+</layout>
