@@ -1,7 +1,9 @@
 package minimalism.voalearning.listchannel
 
 
+import android.os.Build
 import android.os.Bundle
+import android.text.Html
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -54,32 +56,70 @@ class ListChannelFragment : Fragment() {
                 initChannelList(response)
             },
             Response.ErrorListener {err ->
-                Log.i("thach", "res err: ${err}")
+                Log.i("thach", "fetchChannelListFromPodcast err: ${err}")
             })
 
         queue.add(stringRequest)
     }
 
     private fun initChannelList(data: String) {
-        val markLo = "<span class=\"title\""
-        val markHi = "</span>"
+        val markTitleOpen = "class=\"img-wrap\" title=\""
+        val markTitleClose = "\">"
 
-        var lo = data.indexOf(markLo)
-        var hi = data.indexOf(markHi, lo)
+        val markImageOpen = "<img data-src=\""
+        val markImageClose = "\" src="
+
+        val markZoneOpen = "<a class=\"link-service\" href=\""
+        val markZoneClose = "\">"
+
+
+        var lo = data.indexOf(markTitleOpen)
+        var hi = data.indexOf(markTitleClose, lo)
 
         while (lo >= 0 ) {
-            lo += markLo.length + 1
+            //get title
+            lo += markTitleOpen.length
 
-            var s = data.substring(lo , hi)
-            s = s.replace("&#39;", "\'")
-            s = s.replace("&amp;", "&")
+            var title = data.substring(lo , hi)
 
-            Log.i("thach", "item: $s")
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                title = Html.fromHtml(title, Html.FROM_HTML_MODE_LEGACY).toString()
+            }
+            else {
+                title = Html.fromHtml(title).toString()
+            }
 
-            lo = data.indexOf(markLo, hi)
-            hi = data.indexOf(markHi, lo)
+
+            //get imageURL
+            lo = data.indexOf(markImageOpen, hi)
+            lo += markImageOpen.length
+            hi = data.indexOf(markImageClose, lo)
+
+            var imageUrl = data.substring(lo, hi)
+
+            //get zoneID
+            lo = data.indexOf(markZoneOpen, hi)
+            lo += markZoneOpen.length
+            hi = data.indexOf(markZoneClose, lo)
+
+            var zoneId = data.substring(lo, hi)
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                zoneId = Html.fromHtml(zoneId, Html.FROM_HTML_MODE_LEGACY).toString()
+            }
+            else {
+                zoneId = Html.fromHtml(zoneId).toString()
+            }
+
+            Log.i("thach", "item: $title")
+            Log.i("thach", "item: $imageUrl")
+            Log.i("thach", "item: $zoneId")
+            Log.i("thach", "----------------")
+
+            mChannelList.add( ChannelInfo(title, imageUrl, zoneId))
+
+            lo = data.indexOf(markTitleOpen, hi)
+            hi = data.indexOf(markTitleClose, lo)
         }
     }
-
-
 }

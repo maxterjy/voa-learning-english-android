@@ -10,6 +10,8 @@ import minimalism.voalearning.R
 
 class ChannelAdapter() : RecyclerView.Adapter<ChannelAdapter.ChannelViewHolder>() {
 
+    
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChannelViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.channel_item_layout, parent, false)
 
