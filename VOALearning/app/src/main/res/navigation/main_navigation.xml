@@ -5,6 +5,6 @@
             app:startDestination="@id/listChannelFragment">
 
     <fragment android:id="@+id/listChannelFragment"
-              android:name="minimalism.voalearning.listchannel.ListChannelFragment"
+              android:name="minimalism.voalearning.listchannel.ChannelListFragment"
               android:label="fragment_list_channel" tools:layout="@layout/fragment_list_channel"/>
 </navigation>

@@ -5,6 +5,7 @@ import android.os.Build
 import android.os.Bundle
 import android.text.Html
 import android.util.Log
+import android.util.MutableInt
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -30,22 +31,21 @@ private const val ARG_PARAM2 = "param2"
  * A simple [Fragment] subclass.
  *
  */
-class ListChannelFragment : Fragment() {
+class ChannelListFragment : Fragment() {
 
-    var mChannelList: ArrayList<ChannelInfo> = ArrayList()
+    lateinit var mChannelList: ArrayList<ChannelInfo>
+    lateinit var mBinding: FragmentListChannelBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-
+        mBinding = FragmentListChannelBinding.inflate(inflater, container, false)
         fetchChannelListFromPodcast()
 
-        val binding = FragmentListChannelBinding.inflate(inflater, container, false)
-
-        binding.rcChannel.apply {
-            adapter = ChannelAdapter(mChannelList)
-        }
-
-        return binding.root
+        return mBinding.root
     }
 
     private fun fetchChannelListFromPodcast() {
@@ -64,61 +64,8 @@ class ListChannelFragment : Fragment() {
         queue.add(stringRequest)
     }
 
-    private fun initChannelList(data: String) {
-        val markTitleOpen = "class=\"img-wrap\" title=\""
-        val markTitleClose = "\">"
-
-        val markImageOpen = "<img data-src=\""
-        val markImageClose = "\" src="
-
-        val markZoneOpen = "zoneId="
-        val markZoneClose = "\">"
-
-        val scanner = Scanner(data)
-        var title = ""
-        var imageUrl = ""
-        var zoneId = ""
-        var lo = 0
-        var hi = 0
-        var line = ""
-
-        while (scanner.hasNext()) {
-            line = scanner.nextLine()
-
-            lo = line.indexOf(markTitleOpen)
-            if (lo >= 0) {
-                hi = line.indexOf(markTitleClose)
-                title = line.substring(lo + markTitleOpen.length, hi)
-            }
-
-            lo = line.indexOf(markImageOpen)
-            if (lo >= 0) {
-                hi = line.indexOf(markImageClose)
-                imageUrl = line.substring(lo + markImageOpen.length, hi)
-            }
-
-            lo = line.indexOf(markZoneOpen)
-            if (lo >= 0) {
-                hi = line.indexOf(markZoneClose)
-                zoneId = line.substring(lo + markZoneOpen.length, hi)
-
-
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                    title = Html.fromHtml(title, Html.FROM_HTML_MODE_LEGACY).toString()
-                    zoneId = Html.fromHtml(zoneId, Html.FROM_HTML_MODE_LEGACY).toString()
-                }
-                else {
-                    title = Html.fromHtml(title).toString()
-                    zoneId = Html.fromHtml(zoneId).toString()
-                }
-
-//                Log.i("thach", "$title")
-//                Log.i("thach", "$imageUrl")
-//                Log.i("thach", "$zoneId")
-//                Log.i("thach", "--------")
-
-                mChannelList.add( ChannelInfo(title, imageUrl, zoneId))
-            }
-        }
+    private fun initChannelList(data: String?) {
+        val task = InitChannelListAsyncTask(this)
+        task.execute(data)
     }
 }

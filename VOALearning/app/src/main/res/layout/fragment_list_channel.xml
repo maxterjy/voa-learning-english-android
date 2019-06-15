@@ -10,7 +10,7 @@
     <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".listchannel.ListChannelFragment">
+            tools:context=".listchannel.ChannelListFragment">
 
         <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rc_channel"
