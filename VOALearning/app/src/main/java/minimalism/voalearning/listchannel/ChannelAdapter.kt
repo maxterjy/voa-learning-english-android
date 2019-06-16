@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import minimalism.voalearning.R
 import minimalism.voalearning.databinding.ChannelItemLayoutBinding
 
@@ -23,6 +24,9 @@ class ChannelAdapter(var mChannelList: ArrayList<ChannelInfo>) : RecyclerView.Ad
 
     override fun onBindViewHolder(holder: ChannelViewHolder, position: Int) {
         holder.binding.tvTitle.setText(mChannelList[position].mTitle)
+        holder.binding.tvZoneid.setText("Zone ${mChannelList[position].mZoneId}")
+
+        Picasso.get().load(mChannelList[position].mImageUrl).into(holder.binding.ivChannelIcon)
     }
 
     //ViewHolder
