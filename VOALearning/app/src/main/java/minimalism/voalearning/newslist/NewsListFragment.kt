@@ -97,7 +97,6 @@ class NewsListFragment : Fragment() {
                     "title" -> {
                         parser.next()
                         title = parser.text
-
                     }
 
                     "itunes:duration" -> {

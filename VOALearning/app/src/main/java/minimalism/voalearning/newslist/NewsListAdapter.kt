@@ -23,12 +23,34 @@ class NewsListAdapter(var mNewsList: ArrayList<NewsInfo>): RecyclerView.Adapter<
     }
 
     override fun onBindViewHolder(holder: NewsListAdapter.NewsViewHolder, position: Int) {
-        holder.binding.tvNewsTitle.setText(mNewsList[position].mTitle)
-        holder.binding.tvNewsDuration.setText(mNewsList[position].mDuration)
+        holder.binding.tvNewsTitle.setText(getTitle(mNewsList[position].mTitle))
+        holder.binding.tvNewsDate.setText(getDate(mNewsList[position].mTitle))
+        holder.binding.tvNewsDuration.setText(getDuration(mNewsList[position].mDuration))
+    }
+
+    private fun getDuration(str: String): String {
+        return str.substring(3)
+    }
+
+    private fun getDate(str: String): String {
+        var pos = str.lastIndexOf('-')
+        if (pos >= 0) {
+            return str.substring(pos+2)
+        }
+
+        return ""
+    }
+
+    private fun getTitle(str: String): String {
+        var pos = str.lastIndexOf('-')
+        if (pos >= 0) {
+            return str.substring(0, pos)
+        }
+
+        return str
     }
 
     class NewsViewHolder(var binding: NewsItemLayoutBinding): RecyclerView.ViewHolder(binding.root){
 
     }
-
 }
