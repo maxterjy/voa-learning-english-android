@@ -30,7 +30,7 @@ class NewsListFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        loadNewsList()
+
     }
 
     override fun onCreateView(
@@ -39,11 +39,7 @@ class NewsListFragment : Fragment() {
     ): View? {
         mBinding =  FragmentNewsListBinding.inflate(inflater, container, false)
 
-
-        mNewsAdapter = NewsListAdapter()
-        mBinding.rcNewsList.apply {
-            adapter = mNewsAdapter
-        }
+        loadNewsList()
 
         return mBinding.root
     }
@@ -81,6 +77,12 @@ class NewsListFragment : Fragment() {
 
 
             parser.next()
+        }
+
+
+        mNewsAdapter = NewsListAdapter(mNewsList)
+        mBinding.rcNewsList.apply {
+            adapter = mNewsAdapter
         }
     }
 

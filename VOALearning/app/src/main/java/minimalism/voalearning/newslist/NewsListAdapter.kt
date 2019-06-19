@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import minimalism.voalearning.databinding.NewsItemLayoutBinding
 
 
-class NewsListAdapter(): RecyclerView.Adapter<NewsListAdapter.NewsViewHolder>() {
+class NewsListAdapter(var mNewsList: ArrayList<NewsInfo>): RecyclerView.Adapter<NewsListAdapter.NewsViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsListAdapter.NewsViewHolder {
@@ -19,14 +19,15 @@ class NewsListAdapter(): RecyclerView.Adapter<NewsListAdapter.NewsViewHolder>() 
     }
 
     override fun getItemCount(): Int {
-        return 10
+        return mNewsList.size
     }
 
     override fun onBindViewHolder(holder: NewsListAdapter.NewsViewHolder, position: Int) {
-
+        holder.binding.tvNewsTitle.setText(mNewsList[position].mTitle)
+        holder.binding.tvNewsDuration.setText(mNewsList[position].mDuration)
     }
 
-    class NewsViewHolder(binding: NewsItemLayoutBinding): RecyclerView.ViewHolder(binding.root){
+    class NewsViewHolder(var binding: NewsItemLayoutBinding): RecyclerView.ViewHolder(binding.root){
 
     }
 
