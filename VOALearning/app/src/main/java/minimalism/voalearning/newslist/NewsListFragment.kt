@@ -8,6 +8,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.Response.Listener
@@ -26,14 +29,12 @@ class NewsListFragment : Fragment() {
     lateinit var mNewsAdapter: NewsListAdapter
     var ns: String? = null
     lateinit var mNewsList: ArrayList<NewsInfo>
-    lateinit var mZoneId: String
+    lateinit var mArgs: NewsListFragmentArgs
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val args = NewsListFragmentArgs.fromBundle(arguments)
-        mZoneId = args.zoneId
-        Log.i("thach", "zoneid: ${mZoneId}")
+        mArgs = NewsListFragmentArgs.fromBundle(arguments)
     }
 
     override fun onCreateView(
@@ -44,12 +45,15 @@ class NewsListFragment : Fragment() {
 
         loadNewsList()
 
+        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        (activity as AppCompatActivity).supportActionBar?.title = mArgs.title
+
         return mBinding.root
     }
 
     private fun loadNewsList() {
         val queue = Volley.newRequestQueue(context)
-        val url = "https://learningenglish.voanews.com/podcast/?count=20&zoneId=${mZoneId}"
+        val url = "https://learningenglish.voanews.com/podcast/?count=20&zoneId=${mArgs.zoneId}"
         val stringRequest = StringRequest(Request.Method.GET, url,
             Response.Listener<String> {response ->
 //                File("/sdcard/debug.txt").writeText(response)
@@ -119,4 +123,5 @@ class NewsListFragment : Fragment() {
 
         mNewsList.add(NewsInfo(title, duration, url))
     }
+
 }

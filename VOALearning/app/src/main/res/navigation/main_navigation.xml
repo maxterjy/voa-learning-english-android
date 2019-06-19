@@ -11,7 +11,8 @@
               tools:layout="@layout/fragment_list_channel">
         <action
                 android:id="@+id/action_listChannelFragment_to_newsListFragment"
-                app:destination="@id/newsListFragment"/>
+                app:destination="@id/newsListFragment"
+                app:popUpTo="@+id/listChannelFragment"/>
     </fragment>
 
     <fragment
@@ -20,6 +21,7 @@
             android:label="NewsListFragment">
         <argument
                 android:name="zone_id" app:argType="string"/>
+        <argument android:name="title" app:argType="string"/>
     </fragment>
 
 </navigation>

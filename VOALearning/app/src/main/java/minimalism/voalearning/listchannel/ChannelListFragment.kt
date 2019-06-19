@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
@@ -40,6 +41,9 @@ class ChannelListFragment : Fragment(), ChannelAdapter.OnChannelClickListener {
             inflater, container, false)
         fetchChannelListFromPodcast()
 
+        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        (activity as AppCompatActivity).supportActionBar?.title = "VOA Learning English"
+
         return mBinding.root
     }
 
@@ -65,9 +69,9 @@ class ChannelListFragment : Fragment(), ChannelAdapter.OnChannelClickListener {
     }
 
     override fun onChannelItemClick(itemIndex: Int) {
-        Log.i("thach", "onChannelItemClick:${mChannelList[itemIndex].mZoneId} ")
+        val title = mChannelList[itemIndex].mTitle
         val zoneId = mChannelList[itemIndex].mZoneId
 
-        findNavController().navigate(ChannelListFragmentDirections.actionListChannelFragmentToNewsListFragment(zoneId))
+        findNavController().navigate(ChannelListFragmentDirections.actionListChannelFragmentToNewsListFragment(zoneId, title))
     }
 }
