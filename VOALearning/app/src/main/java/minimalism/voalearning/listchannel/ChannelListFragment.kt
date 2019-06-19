@@ -34,7 +34,8 @@ class ChannelListFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        mBinding = FragmentListChannelBinding.inflate(inflater, container, false)
+        mBinding = FragmentListChannelBinding.inflate(
+            inflater, container, false)
         fetchChannelListFromPodcast()
 
         return mBinding.root

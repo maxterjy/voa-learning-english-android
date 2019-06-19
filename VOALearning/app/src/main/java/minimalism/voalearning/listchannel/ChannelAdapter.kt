@@ -13,7 +13,8 @@ class ChannelAdapter(var mChannelList: ArrayList<ChannelInfo>) : RecyclerView.Ad
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChannelViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = ChannelItemLayoutBinding.inflate(inflater, parent, false)
+        val binding = ChannelItemLayoutBinding.inflate(
+            inflater, parent, false)
 
         return ChannelViewHolder(binding)
     }
