@@ -26,11 +26,14 @@ class NewsListFragment : Fragment() {
     lateinit var mNewsAdapter: NewsListAdapter
     var ns: String? = null
     lateinit var mNewsList: ArrayList<NewsInfo>
+    lateinit var mZoneId: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
+        val args = NewsListFragmentArgs.fromBundle(arguments)
+        mZoneId = args.zoneId
+        Log.i("thach", "zoneid: ${mZoneId}")
     }
 
     override fun onCreateView(
@@ -46,7 +49,7 @@ class NewsListFragment : Fragment() {
 
     private fun loadNewsList() {
         val queue = Volley.newRequestQueue(context)
-        val url = "https://learningenglish.voanews.com/podcast/?count=20&zoneId=986"
+        val url = "https://learningenglish.voanews.com/podcast/?count=20&zoneId=${mZoneId}"
         val stringRequest = StringRequest(Request.Method.GET, url,
             Response.Listener<String> {response ->
 //                File("/sdcard/debug.txt").writeText(response)

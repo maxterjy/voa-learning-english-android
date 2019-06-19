@@ -1,6 +1,7 @@
 package minimalism.voalearning.listchannel
 
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,12 @@ import minimalism.voalearning.R
 import minimalism.voalearning.databinding.ChannelItemLayoutBinding
 
 class ChannelAdapter(var mChannelList: ArrayList<ChannelInfo>) : RecyclerView.Adapter<ChannelAdapter.ChannelViewHolder>() {
+
+    interface OnChannelClickListener {
+        fun onChannelItemClick(itemIndex: Int)
+    }
+
+    var mChannelClickListener: OnChannelClickListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChannelViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -28,11 +35,16 @@ class ChannelAdapter(var mChannelList: ArrayList<ChannelInfo>) : RecyclerView.Ad
         holder.binding.tvZoneid.setText("Zone ${mChannelList[position].mZoneId}")
 
         Picasso.get().load(mChannelList[position].mImageUrl).into(holder.binding.ivChannelIcon)
+
     }
 
     //ViewHolder
-    class ChannelViewHolder(val binding: ChannelItemLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
-
+    inner class ChannelViewHolder(val binding: ChannelItemLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
+        init {
+            itemView.setOnClickListener({view ->
+                mChannelClickListener?.onChannelItemClick(adapterPosition)
+            })
+        }
     }
 
 }

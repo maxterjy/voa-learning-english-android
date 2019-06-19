@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.Response
@@ -23,7 +24,8 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 
-class ChannelListFragment : Fragment() {
+class ChannelListFragment : Fragment(), ChannelAdapter.OnChannelClickListener {
+
 
     lateinit var mChannelList: ArrayList<ChannelInfo>
     lateinit var mBinding: FragmentListChannelBinding
@@ -60,5 +62,12 @@ class ChannelListFragment : Fragment() {
     private fun initChannelList(data: String?) {
         val task = InitChannelListAsyncTask(this)
         task.execute(data)
+    }
+
+    override fun onChannelItemClick(itemIndex: Int) {
+        Log.i("thach", "onChannelItemClick:${mChannelList[itemIndex].mZoneId} ")
+        val zoneId = mChannelList[itemIndex].mZoneId
+
+        findNavController().navigate(ChannelListFragmentDirections.actionListChannelFragmentToNewsListFragment(zoneId))
     }
 }

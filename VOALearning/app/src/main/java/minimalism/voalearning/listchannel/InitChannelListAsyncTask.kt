@@ -21,8 +21,11 @@ class InitChannelListAsyncTask(var mFragment: ChannelListFragment): AsyncTask<St
     override fun onPostExecute(result: Void?) {
         super.onPostExecute(result)
 
+        var channelAdapter = ChannelAdapter(mChannelList)
+        channelAdapter.mChannelClickListener = mFragment
+
         mFragment.mBinding.rcChannel.apply {
-            adapter = ChannelAdapter(mChannelList)
+            adapter = channelAdapter
         }
     }
 
@@ -113,6 +116,8 @@ class InitChannelListAsyncTask(var mFragment: ChannelListFragment): AsyncTask<St
 
                 mChannelList.add( ChannelInfo(title, imageUrl, zoneId, summary))
             }
+
+            mFragment.mChannelList = mChannelList
         }
     }
 }
