@@ -12,7 +12,13 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
+
+        <service
+                android:name=".audioplayer.AudioService">
+        </service>
+
+        <activity
+                android:name=".MainActivity"
                 android:configChanges="orientation|screenSize|keyboard|keyboardHidden|density">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
