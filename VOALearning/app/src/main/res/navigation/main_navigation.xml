@@ -29,6 +29,9 @@
     <fragment
             android:id="@+id/audioPlayFragment"
             android:name="minimalism.voalearning.audioplayer.AudioPlayFragment"
-            android:label="fragment_audio_play" tools:layout="@layout/fragment_audio_play"/>
+            android:label="fragment_audio_play" tools:layout="@layout/fragment_audio_play">
+        <argument
+                android:name="news_info" app:argType="minimalism.voalearning.newslist.NewsInfo"/>
+    </fragment>
 
 </navigation>

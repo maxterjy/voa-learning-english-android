@@ -128,7 +128,7 @@ class NewsListFragment : Fragment(), NewsListAdapter.OnNewsClickListener {
 
     override fun onNewsItemClick(itemIndex: Int) {
 
-        findNavController().navigate(NewsListFragmentDirections.actionNewsListFragmentToAudioPlayFragment())
+        findNavController().navigate(NewsListFragmentDirections.actionNewsListFragmentToAudioPlayFragment(mNewsList[itemIndex]))
     }
 
 }

@@ -20,6 +20,7 @@ import minimalism.voalearning.databinding.FragmentAudioPlayBinding
 class AudioPlayFragment : Fragment() {
 
     lateinit var mFragmentBinding: FragmentAudioPlayBinding
+    lateinit var mArgs: AudioPlayFragmentArgs
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +35,10 @@ class AudioPlayFragment : Fragment() {
         Log.i("thach", "AudioPlayFragment onCreateView")
 
         mFragmentBinding = FragmentAudioPlayBinding.inflate(inflater, container, false)
+        mArgs = AudioPlayFragmentArgs.fromBundle(arguments)
+
+        val urlStrl = mArgs.newsInfo.mAudioUrl
+        AudioPlayServiceHolder.mAudioService?.playAudioFromURL(urlStrl)
 
         return mFragmentBinding.root
     }
