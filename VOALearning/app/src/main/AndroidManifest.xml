@@ -19,7 +19,7 @@
 
         <activity
                 android:name=".MainActivity"
-                android:configChanges="orientation|screenSize|keyboard|keyboardHidden|density">
+                >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

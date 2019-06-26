@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -23,8 +24,7 @@ import org.xmlpull.v1.XmlPullParserFactory
 import java.io.File
 import java.io.StringReader
 
-class NewsListFragment : Fragment() {
-
+class NewsListFragment : Fragment(), NewsListAdapter.OnNewsClickListener {
     lateinit var mBinding: FragmentNewsListBinding
     lateinit var mNewsAdapter: NewsListAdapter
     var ns: String? = null
@@ -34,7 +34,6 @@ class NewsListFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        mArgs = NewsListFragmentArgs.fromBundle(arguments)
     }
 
     override fun onCreateView(
@@ -43,6 +42,7 @@ class NewsListFragment : Fragment() {
     ): View? {
         mBinding =  FragmentNewsListBinding.inflate(inflater, container, false)
 
+        mArgs = NewsListFragmentArgs.fromBundle(arguments)
         loadNewsList()
 
         (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -88,6 +88,8 @@ class NewsListFragment : Fragment() {
 
 
         mNewsAdapter = NewsListAdapter(mNewsList)
+        mNewsAdapter.mItemListener = this
+
         mBinding.rcNewsList.apply {
             adapter = mNewsAdapter
         }
@@ -122,6 +124,11 @@ class NewsListFragment : Fragment() {
         }
 
         mNewsList.add(NewsInfo(title, duration, url))
+    }
+
+    override fun onNewsItemClick(itemIndex: Int) {
+
+        findNavController().navigate(NewsListFragmentDirections.actionNewsListFragmentToAudioPlayFragment())
     }
 
 }

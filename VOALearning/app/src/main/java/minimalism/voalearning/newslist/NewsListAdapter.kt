@@ -9,6 +9,11 @@ import minimalism.voalearning.databinding.NewsItemLayoutBinding
 
 class NewsListAdapter(var mNewsList: ArrayList<NewsInfo>): RecyclerView.Adapter<NewsListAdapter.NewsViewHolder>() {
 
+    interface OnNewsClickListener {
+        fun onNewsItemClick(itemIndex: Int)
+    }
+
+    var mItemListener: OnNewsClickListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsListAdapter.NewsViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -50,7 +55,11 @@ class NewsListAdapter(var mNewsList: ArrayList<NewsInfo>): RecyclerView.Adapter<
         return str
     }
 
-    class NewsViewHolder(var binding: NewsItemLayoutBinding): RecyclerView.ViewHolder(binding.root){
-
+    inner class NewsViewHolder(var binding: NewsItemLayoutBinding): RecyclerView.ViewHolder(binding.root){
+        init {
+            itemView.setOnClickListener({view ->
+                mItemListener?.onNewsItemClick(adapterPosition)
+            })
+        }
     }
 }
