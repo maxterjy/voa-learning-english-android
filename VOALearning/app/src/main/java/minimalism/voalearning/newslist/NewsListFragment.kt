@@ -1,6 +1,7 @@
 package minimalism.voalearning.newslist
 
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.util.Xml
@@ -17,6 +18,7 @@ import com.android.volley.Response
 import com.android.volley.Response.Listener
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import minimalism.voalearning.MainActivity
 
 import minimalism.voalearning.databinding.FragmentNewsListBinding
 import org.xmlpull.v1.XmlPullParser
@@ -25,11 +27,18 @@ import java.io.File
 import java.io.StringReader
 
 class NewsListFragment : Fragment(), NewsListAdapter.OnNewsClickListener {
+
+    interface OnNewsListener {
+        fun onNewsItemClicked(news: NewsInfo)
+    }
+
     lateinit var mBinding: FragmentNewsListBinding
     lateinit var mNewsAdapter: NewsListAdapter
     var ns: String? = null
     lateinit var mNewsList: ArrayList<NewsInfo>
     lateinit var mArgs: NewsListFragmentArgs
+    var mOnNewsListener: OnNewsListener? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -126,9 +135,15 @@ class NewsListFragment : Fragment(), NewsListAdapter.OnNewsClickListener {
         mNewsList.add(NewsInfo(title, duration, url))
     }
 
-    override fun onNewsItemClick(itemIndex: Int) {
+    override fun onAttach(context: Context?) {
+        super.onAttach(context)
+        mOnNewsListener =  activity as MainActivity
+    }
 
-        findNavController().navigate(NewsListFragmentDirections.actionNewsListFragmentToAudioPlayFragment(mNewsList[itemIndex]))
+    override fun onNewsItemClick(itemIndex: Int) {
+        val item = mNewsList[itemIndex]
+
+        mOnNewsListener?.onNewsItemClicked(item)
     }
 
 }

@@ -8,12 +8,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.IBinder
 import android.util.Log
+import android.view.View
+import android.widget.Toast
+import androidx.databinding.DataBindingUtil
 import minimalism.voalearning.audioplayer.AudioPlayServiceHolder
 import minimalism.voalearning.audioplayer.AudioService
+import minimalism.voalearning.databinding.ActivityMainBinding
+import minimalism.voalearning.newslist.NewsInfo
+import minimalism.voalearning.newslist.NewsListFragment
 
-class MainActivity : AppCompatActivity() {
-
+class MainActivity : AppCompatActivity(), NewsListFragment.OnNewsListener {
     lateinit var mService: AudioService
+    lateinit var mBinding: ActivityMainBinding
+    var mIsPlaying = false
 
     val mServiceConnection = object: ServiceConnection {
 
@@ -23,8 +30,6 @@ class MainActivity : AppCompatActivity() {
             mService = binder.getService()
 
             AudioPlayServiceHolder.mAudioService = mService
-
-//            mService.playAudioFromURL("https://av.voanews.com/clips/VLE/2019/06/20/b49db470-2c73-4d08-a809-36560d44c5b6_hq.mp3")
         }
 
         override fun onServiceDisconnected(name: ComponentName?) {
@@ -34,9 +39,16 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         bindAudioService()
+
+        mBinding.btnPlay.setOnClickListener {
+            if (mIsPlaying)
+                pauseNews()
+            else
+                resumeNews()
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -47,5 +59,33 @@ class MainActivity : AppCompatActivity() {
     fun bindAudioService() {
         val intent = Intent(this, AudioService::class.java)
         bindService(intent, mServiceConnection, Context.BIND_AUTO_CREATE)
+    }
+
+    override fun onNewsItemClicked(news: NewsInfo) {
+        if (mBinding.panelAudioControl.visibility != View.VISIBLE)
+            mBinding.panelAudioControl.visibility = View.VISIBLE
+
+        startNews(news)
+    }
+
+    private fun startNews(news: NewsInfo) {
+        mBinding.tvCurrentNewsTitle.setText(news.mTitle)
+        mBinding.btnPlay.setBackgroundResource(R.drawable.ic_pause)
+
+        mService.startAudioFromURL(news.mAudioUrl)
+    }
+
+    private fun resumeNews() {
+        mBinding.btnPlay.setBackgroundResource(R.drawable.ic_pause)
+        mIsPlaying = true
+
+        mService.resumeAudio()
+    }
+
+    private fun pauseNews() {
+        mBinding.btnPlay.setBackgroundResource(R.drawable.ic_play)
+        mIsPlaying = false
+
+        mService.pauseAudio()
     }
 }

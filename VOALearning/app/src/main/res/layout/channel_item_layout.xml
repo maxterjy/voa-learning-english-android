@@ -13,7 +13,7 @@
 
         <ImageView
                 android:id="@+id/iv_channel_icon"
-                android:layout_width="56dp"
+                android:layout_width="68dp"
                 android:layout_height="56dp"
                 android:scaleType="fitXY"
                 android:layout_marginStart="8dp"
@@ -35,7 +35,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
             <TextView
                     android:id="@+id/tv_zoneid"
@@ -48,7 +48,5 @@
                     android:layout_marginLeft="8dp"
                     android:text="summary"/>
         </LinearLayout>
-
-
     </LinearLayout>
 </layout>

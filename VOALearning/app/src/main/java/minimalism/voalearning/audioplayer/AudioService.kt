@@ -10,7 +10,7 @@ import android.util.Log
 
 class AudioService : Service() {
 
-    var mMediaPlayer: MediaPlayer?       = null
+    var mMediaPlayer: MediaPlayer? = null
 
     inner class AudioBinder : Binder() {
         fun getService(): AudioService {
@@ -38,7 +38,7 @@ class AudioService : Service() {
         mMediaPlayer?.release()
     }
 
-    fun playAudioFromURL(urlStr: String) {
+    fun startAudioFromURL(urlStr: String) {
         mMediaPlayer?.run {
             if (isPlaying) {
                 pause()

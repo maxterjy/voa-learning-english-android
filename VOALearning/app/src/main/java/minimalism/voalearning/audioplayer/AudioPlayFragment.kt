@@ -38,7 +38,7 @@ class AudioPlayFragment : Fragment() {
         mArgs = AudioPlayFragmentArgs.fromBundle(arguments)
 
         val urlStrl = mArgs.newsInfo.mAudioUrl
-        AudioPlayServiceHolder.mAudioService?.playAudioFromURL(urlStrl)
+        AudioPlayServiceHolder.mAudioService?.startAudioFromURL(urlStrl)
 
         return mFragmentBinding.root
     }
