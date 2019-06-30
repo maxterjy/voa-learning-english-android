@@ -50,10 +50,32 @@
                         android:layout_toLeftOf="@id/btn_play"
                         android:layout_marginRight="8dp"
                         android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
                         android:text="College Music Program Finds Long-Lost Funk Recordings"
                         android:maxLines="1"
                         android:inputType="text"
-                        android:layout_centerVertical="true"/>
+                        android:textStyle="bold"/>
+
+                <TextView
+                        android:id="@+id/tv_current_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00:00"
+                        android:layout_below="@id/tv_current_news_title"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_alignParentLeft="true"/>
+
+                <TextView
+                        android:id="@+id/tv_duration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="05:00"
+                        android:layout_below="@id/tv_current_news_title"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_toLeftOf="@id/btn_play"/>
+
             </RelativeLayout>
         </RelativeLayout>
 

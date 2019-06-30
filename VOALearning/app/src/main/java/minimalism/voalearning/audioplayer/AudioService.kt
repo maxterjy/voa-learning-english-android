@@ -5,12 +5,19 @@ import android.content.Intent
 import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Binder
+import android.os.Handler
 import android.os.IBinder
 import android.util.Log
+import java.lang.ref.WeakReference
 
 class AudioService : Service() {
 
+    interface OnAudioCompletedListener {
+        fun onAudioCompleted()
+    }
+
     var mMediaPlayer: MediaPlayer? = null
+    var mAudioCompletedListener: WeakReference<OnAudioCompletedListener>? = null
 
     inner class AudioBinder : Binder() {
         fun getService(): AudioService {
@@ -40,10 +47,8 @@ class AudioService : Service() {
 
     fun startAudioFromURL(urlStr: String) {
         mMediaPlayer?.run {
-            if (isPlaying) {
-                pause()
-                release()
-            }
+            pause()
+            release()
         }
 
         val uri = Uri.parse(urlStr)
@@ -51,9 +56,15 @@ class AudioService : Service() {
         mMediaPlayer = MediaPlayer()
         mMediaPlayer?.apply {
             setDataSource(applicationContext, uri)
+
+            setOnCompletionListener {
+                mAudioCompletedListener?.get()?.onAudioCompleted()
+            }
+
             setOnPreparedListener {
                 start()
             }
+
             prepareAsync()
         }
     }
