@@ -18,6 +18,7 @@ import com.android.volley.Response
 import com.android.volley.Response.Listener
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.google.android.material.snackbar.Snackbar
 import minimalism.voalearning.MainActivity
 
 import minimalism.voalearning.databinding.FragmentNewsListBinding
@@ -66,6 +67,7 @@ class NewsListFragment : Fragment(), NewsListAdapter.OnNewsClickListener {
         val stringRequest = StringRequest(Request.Method.GET, url,
             Response.Listener<String> {response ->
 //                File("/sdcard/debug.txt").writeText(response)
+                mBinding.loadingNewsBar.visibility = View.INVISIBLE
 
                 parseNews(response)
             },
@@ -95,6 +97,12 @@ class NewsListFragment : Fragment(), NewsListAdapter.OnNewsClickListener {
             parser.next()
         }
 
+        if (mNewsList.size == 0) {
+            view?.let {
+                val snackbar = Snackbar.make(it, "There is no news in this channel", Snackbar.LENGTH_LONG)
+                snackbar.show()
+            }
+        }
 
         mNewsAdapter = NewsListAdapter(mNewsList)
         mNewsAdapter.mItemListener = this

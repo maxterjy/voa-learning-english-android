@@ -12,6 +12,12 @@
             android:layout_height="match_parent"
             tools:context=".listchannel.ChannelListFragment">
 
+        <ProgressBar
+                android:id="@+id/loading_channel_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"/>
+
         <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rc_channel"
                 android:layout_width="match_parent"

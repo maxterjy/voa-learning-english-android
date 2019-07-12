@@ -13,6 +13,12 @@
             android:layout_height="match_parent"
             tools:context=".newslist.ChannelDetail">
 
+            <ProgressBar
+                    android:id="@+id/loading_news_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"/>
+
             <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rc_news_list"
                     android:layout_width="match_parent"

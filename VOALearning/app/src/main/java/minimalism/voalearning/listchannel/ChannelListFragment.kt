@@ -52,7 +52,7 @@ class ChannelListFragment : Fragment(), ChannelAdapter.OnChannelClickListener {
         val url = "https://learningenglish.voanews.com/podcasts"
         val stringRequest = StringRequest(Request.Method.GET, url,
             Response.Listener<String> {response ->
-                File("/sdcard/debug.txt").writeText(response)
+                mBinding.loadingChannelBar.visibility = View.INVISIBLE
 
                 initChannelList(response)
             },
