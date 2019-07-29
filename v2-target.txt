@@ -1,0 +1,7 @@
+- Migrate to MVVM architecture
+- Migrate to MediaBrowser/MediaBrowserService
+- Add playback screen
+- Show playback on notification when playing background
+- Add first launch screen: save the 3 channels that users attend
+- Add home screen: show news of the choosen channels
+- Re-design non-feed result UI

@@ -1,36 +1,58 @@
 package minimalism.voalearning.listchannel
 
-import android.os.AsyncTask
+import android.app.Application
+import android.content.Context
 import android.os.Build
 import android.text.Html
 import android.util.Log
+import android.view.View
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import java.util.*
 import kotlin.collections.ArrayList
 
-class InitChannelListAsyncTask(var mFragment: ChannelListFragment): AsyncTask<String, Void, Void>() {
+class ChannelListViewModel(val app: Application): AndroidViewModel(app) {
 
     lateinit var mChannelList: ArrayList<ChannelInfo>
 
-    override fun doInBackground(vararg params: String): Void? {
-        val data:String = params[0]
-        initChannelList(data)
-
-        return null
+    var mIsFetchFinished = MutableLiveData<Boolean>().apply {
+        value = false
     }
 
-    override fun onPostExecute(result: Void?) {
-        super.onPostExecute(result)
-
-        var channelAdapter = ChannelAdapter(mChannelList)
-        channelAdapter.mChannelClickListener = mFragment
-
-        mFragment.mBinding.rcChannel.apply {
-            adapter = channelAdapter
-        }
+    init {
+        fetchChannelListFromPodcast()
     }
 
-    private fun initChannelList(data: String) {
-        mChannelList = ArrayList()
+    override fun onCleared() {
+        super.onCleared()
+        Log.i("thach", "ChannelListViewModel onCleared")
+    }
+
+    private fun fetchChannelListFromPodcast() {
+        Log.i("thach", "ChannelListViewModel fetchChannelListFromPodcast")
+
+        val queue = Volley.newRequestQueue(app.applicationContext)
+        val url = "https://learningenglish.voanews.com/podcasts"
+        val stringRequest = StringRequest(
+            Request.Method.GET, url,
+            Response.Listener<String> { response ->
+                initChannelList(response)
+            },
+            Response.ErrorListener { err ->
+                Log.i("thach", "fetchChannelListFromPodcast err: ${err}")
+            })
+
+        queue.add(stringRequest)
+    }
+
+    private fun initChannelList(data: String){
+        Log.i("thach", "ChannelListViewModel initChannelList ${Thread.currentThread().name}")
+        mChannelList = ArrayList<ChannelInfo>()
 
         val markTitleOpen = "class=\"img-wrap\" title=\""
         val markTitleClose = "\">"
@@ -108,16 +130,18 @@ class InitChannelListAsyncTask(var mFragment: ChannelListFragment): AsyncTask<St
                     zoneId = Html.fromHtml(zoneId).toString()
                 }
 
-//                Log.i("thach", "$title")
-//                Log.i("thach", "$imageUrl")
-//                Log.i("thach", "$summary")
-//                Log.i("thach", "$zoneId")
-//                Log.i("thach", "--------")
+                Log.i("thach", "$title")
+                Log.i("thach", "$imageUrl")
+                Log.i("thach", "$summary")
+                Log.i("thach", "$zoneId")
+                Log.i("thach", "--------")
 
                 mChannelList.add( ChannelInfo(title, imageUrl, zoneId, summary))
             }
-
-            mFragment.mChannelList = mChannelList
         }
+
+        mIsFetchFinished.value = true
     }
+
 }
+

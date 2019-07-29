@@ -35,7 +35,6 @@ class ChannelAdapter(var mChannelList: ArrayList<ChannelInfo>) : RecyclerView.Ad
         holder.binding.tvZoneid.setText("Zone ${mChannelList[position].mZoneId}")
 
         Picasso.get().load(mChannelList[position].mImageUrl).into(holder.binding.ivChannelIcon)
-
     }
 
     //ViewHolder
@@ -46,5 +45,4 @@ class ChannelAdapter(var mChannelList: ArrayList<ChannelInfo>) : RecyclerView.Ad
             })
         }
     }
-
 }
