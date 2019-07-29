@@ -7,9 +7,10 @@
 
     <application
             android:allowBackup="true"
-            android:icon="@drawable/voa_icon"
+            android:icon="@mipmap/ic_launcher"
             android:label="VOA Learning English RSS"
             android:supportsRtl="true"
+            android:roundIcon="@mipmap/ic_launcher_round"
             android:theme="@style/AppTheme"
             android:launchMode="singleTask">
 
