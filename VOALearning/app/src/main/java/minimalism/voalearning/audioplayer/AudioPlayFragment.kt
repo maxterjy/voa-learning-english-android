@@ -35,10 +35,10 @@ class AudioPlayFragment : Fragment() {
         Log.i("thach", "AudioPlayFragment onCreateView")
 
         mFragmentBinding = FragmentAudioPlayBinding.inflate(inflater, container, false)
-        mArgs = AudioPlayFragmentArgs.fromBundle(arguments)
+//        mArgs = AudioPlayFragmentArgs.fromBundle(arguments)
 
-        val urlStrl = mArgs.newsInfo.mAudioUrl
-        AudioPlayServiceHolder.mAudioService?.startAudioFromURL(urlStrl)
+//        val urlStrl = mArgs.newsInfo.mAudioUrl
+//        AudioPlayServiceHolder.mAudioService?.startAudioFromURL(urlStrl)
 
         return mFragmentBinding.root
     }
