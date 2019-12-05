@@ -1,7 +1,7 @@
 # VOA Learning English
 
 ## Summary
-An Android application to practice English listening based on Voa API  
+An Android application to practice English listening using Voa API  
 https://learningenglish.voanews.com/podcasts  
   
 Features
